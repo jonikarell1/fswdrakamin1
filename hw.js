@@ -19,7 +19,7 @@ function randomArray (n){
    
     
 }
-randomArray(200);
+randomArray(100);
 console.log(myArr)
 
 function tentukanGaGe (array){
@@ -63,8 +63,8 @@ function sumArray (x){
 sumArray(ganjil)
 sumArray(genap)
 
-console.log(totalgenap)
-console.log(totalganjil)
+console.log(totalGenap)
+console.log(totalGanjil)
 
 function averageArray (totalArray,Array){
          for (let i = 0; i < Array.length; i++){
