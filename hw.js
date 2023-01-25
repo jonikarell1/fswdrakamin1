@@ -19,7 +19,7 @@ function randomArray (n){
    
     
 }
-randomArray(100);
+randomArray(200);
 console.log(myArr)
 
 function tentukanGaGe (array){
