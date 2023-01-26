@@ -1,15 +1,15 @@
 let myArr = []
-let genap =[]
-let ganjil = []
-let total = 0;
-let totalGenap = 0;
-let totalGanjil = 0;
-let avgGenap = 0;
-let avgGanjil =0;
-let maxValGenap = 0;
-let minValGenap = Number.POSITIVE_INFINITY;
-let maxValGanjil = 0;
-let minValGanjil = Number.POSITIVE_INFINITY;
+let arrayGenap =[]
+let arrayGanjil = []
+
+// let totalGenap = 0;
+// let totalGanjil = 0;
+// let avgGenap = 0;
+// let avgGanjil =0;
+// let maxValGenap = 0;
+// let minValGenap = Number.POSITIVE_INFINITY;
+// let maxValGanjil = 0;
+// let minValGanjil = Number.POSITIVE_INFINITY;
 
 function randomArray (n){
     for (let i = 0; i < n; i++){
@@ -24,103 +24,101 @@ console.log(myArr)
 
 function tentukanGaGe (array){
     for ( let i = 0; i < array.length; i++){
-        if (array[i] % 2 == 0){
-            genap.push(array[i])
+        if (i % 2 == 0){
+            arrayGenap.push(array[i])
         } else{
-            ganjil.push(array[i])
+            arrayGanjil.push(array[i])
         }
     }
 }
 tentukanGaGe(myArr);
 
-console.log(genap);
-console.log(ganjil)
+console.log(arrayGenap);
+console.log(arrayGanjil)
 
 
-function sumArray (x){
+function sumArray (array){
 
-        for (let i = 0; i < x.length; i++){
-    
-            if (x[i] % 2 == 0){
+        let total = 0;
 
-                 totalGenap  += x[i];
-                
-            } else {
-                totalGanjil  += x[i];
-            }
-    
-            
-            
+        for (let i = 0; i < array.length; i++){
 
-            
-   
-     
+                 total += array[i];
+        }
 
+        return total 
+       
 }
 
-}
+let totalGenap = sumArray(arrayGenap)
+let totalGanjil = sumArray(arrayGanjil)
 
-sumArray(ganjil)
-sumArray(genap)
 
 console.log(totalGenap)
 console.log(totalGanjil)
 
-function averageArray (totalArray,Array){
-         for (let i = 0; i < Array.length; i++){
+function averageArray (totalArray,array){
 
-             if (Array[i] % 2 == 0){
+        let average = 0
 
-                 avgGenap = totalArray/Array.length;
-                
-            } else {
-                avgGanjil = totalArray/Array.length;
+         for (let i = 0; i < array.length; i++){
+
+                 average = totalArray/array.length;
             }
-        
-    
-    
-
-     
-
+            return average
 }
-    
-}
-averageArray (totalGenap,genap)
-averageArray (totalGanjil,ganjil)
+let avgGenap = averageArray (totalGenap,arrayGenap)
+let avgGanjil = averageArray (totalGanjil,arrayGanjil)
 
 console.log(avgGenap)
 console.log(avgGanjil)
 
-function minMax (getArray){
+ 
+
+function maxValue (getArray){
+
+   
+    let maxValue = getArray[0];
+    
+
     for (let i = 0; i <getArray.length; i++){
 
-        if (getArray[i] % 2 == 0){
-             if (getArray[i]> maxValGenap){
-            maxValGenap = getArray[i]
-        } else if ( getArray[i]< minValGenap){
-            minValGenap = getArray[i]
-        }
-
-        } else {
-            if (getArray[i]> maxValGanjil){
-            maxValGanjil = getArray[i]
-        } else if ( getArray[i]< minValGanjil){
-            minValGanjil = getArray[i]
-        }
-
-        }
-
-       
-
+        if (getArray[i] > maxValue){
+            maxValue = getArray[i]
+        }   
     }
+    return maxValue
+   
+    
 }
 
-minMax(genap)
-minMax(ganjil)
-console.log(maxValGenap)
-console.log(minValGenap)
-console.log(maxValGanjil)
-console.log(minValGanjil)
+ let maxValueGenap = maxValue(arrayGenap)
+ let maxValueGanjil = maxValue(arrayGanjil)
+console.log(maxValueGenap)
+console.log(maxValueGanjil)
+
+function minValue (getArray){
+
+   
+    let minValue = Number.POSITIVE_INFINITY;
+    
+
+    for (let i = 0; i <getArray.length; i++){
+
+        if (getArray[i] < minValue){
+            minValue = getArray[i]
+        }   
+    }
+    return minValue
+   
+    
+}
+
+ let minValueGenap = minValue(arrayGenap)
+ let minValueGanjil = minValue(arrayGanjil)
+console.log(minValueGenap)
+console.log(minValueGanjil)
+
 
 
 function compareMax (even, odd ){
@@ -128,18 +126,20 @@ function compareMax (even, odd ){
     if (even === odd){
         return "nilai sama"
     } else if ( even > odd){
-        return "Nilai  Genap lebih besar"
+        return "Nilai Genap lebih besar"
     } else {
         return "Nilai Ganjil lebih besar"
     }
 }
 
-let hasilCompareMaxValue = compareMax(maxValGenap, maxValGanjil)
-let hasilCompareMinValue = compareMax(minValGenap, minValGanjil)
 let hasilCompareTotalValue = compareMax(totalGenap, totalGanjil)
-let hasilCompareAvgValue = compareMax(avgGenap, avgGanjil)
+let hasilCompareAvgValue= compareMax(avgGenap, avgGanjil)
+let hasilCompareMaxValue = compareMax(maxValueGenap, maxValueGanjil)
+let hasilCompareMinValue  = compareMax(minValueGenap, minValueGanjil)
 
-console.log (hasilCompareMaxValue)
-console.log(hasilCompareMinValue)
-console.log(hasilCompareAvgValue)
-console.log(hasilCompareTotalValue)
+console.log("perbandingan nilai total: " +hasilCompareTotalValue)
+console.log("perbandingan nilai rata: " + hasilCompareAvgValue)
+console.log ("perbandingan nilai max: " + hasilCompareMaxValue)
+console.log("perbandingan nilai min: " + hasilCompareMinValue)
+
+
