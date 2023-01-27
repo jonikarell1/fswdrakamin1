@@ -2,22 +2,11 @@ let myArr = []
 let arrayGenap =[]
 let arrayGanjil = []
 
-// let totalGenap = 0;
-// let totalGanjil = 0;
-// let avgGenap = 0;
-// let avgGanjil =0;
-// let maxValGenap = 0;
-// let minValGenap = Number.POSITIVE_INFINITY;
-// let maxValGanjil = 0;
-// let minValGanjil = Number.POSITIVE_INFINITY;
 
 function randomArray (n){
     for (let i = 0; i < n; i++){
         myArr.push(Math.floor(Math.random()*50+1))
-    }
-
-   
-    
+    }  
 }
 randomArray(100);
 console.log(myArr)
@@ -54,8 +43,8 @@ let totalGenap = sumArray(arrayGenap)
 let totalGanjil = sumArray(arrayGanjil)
 
 
-console.log(totalGenap)
-console.log(totalGanjil)
+console.log("jumlah genap: " + totalGenap)
+console.log("jumlah ganjil: " +totalGanjil)
 
 function averageArray (totalArray,array){
 
@@ -70,8 +59,8 @@ function averageArray (totalArray,array){
 let avgGenap = averageArray (totalGenap,arrayGenap)
 let avgGanjil = averageArray (totalGanjil,arrayGanjil)
 
-console.log(avgGenap)
-console.log(avgGanjil)
+console.log("rata-rata genap: " +avgGenap)
+console.log("rata-rata ganjil: " +avgGanjil)
 
  
 
@@ -94,8 +83,8 @@ function maxValue (getArray){
 
  let maxValueGenap = maxValue(arrayGenap)
  let maxValueGanjil = maxValue(arrayGanjil)
-console.log(maxValueGenap)
-console.log(maxValueGanjil)
+console.log("nilai max genap :" + maxValueGenap)
+console.log("nilai max ganjil :" + maxValueGanjil)
 
 function minValue (getArray){
 
@@ -110,14 +99,12 @@ function minValue (getArray){
         }   
     }
     return minValue
-   
-    
 }
 
  let minValueGenap = minValue(arrayGenap)
  let minValueGanjil = minValue(arrayGanjil)
-console.log(minValueGenap)
-console.log(minValueGanjil)
+console.log("nilai min genap :" + minValueGenap)
+console.log("nilai min ganjil :" + minValueGanjil)
 
 
 
